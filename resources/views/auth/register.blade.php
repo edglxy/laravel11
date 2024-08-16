@@ -4,10 +4,13 @@
     <div class="mx-auto max-w-screen-sm card">
         <form action="{{ route('register') }}" method="post">
             @csrf
+
             {{-- Username --}}
-            <div class="mb-4">
+            <div class="mb-4 ">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="input">
+                <div class="@error('username') border-2 border-rose-600 @enderror">
+                    <input type="text" name="username" class="input" value="{{ old('username') }}">
+                </div>
                 @error('username')
                     <p class="error">{{ $message }}</p>
                 @enderror
@@ -16,19 +19,34 @@
             {{-- Email --}}
             <div class="mb-4">
                 <label for="email">Email</label>
-                <input type="text" name="email" class="input">
+                <div class="@error('email') border-2 border-rose-600 @enderror">
+                    <input type="text" name="email" class="input" value="{{ old('username') }}">
+                </div>
+                @error('email')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
             {{-- Password --}}
             <div class="mb-4">
                 <label for="password">Password</label>
-                <input type="password" name="password" class="input">
+                <div class="@error('password') border-2 border-rose-600 @enderror">
+                    <input type="password" name="password" class="input">
+                </div>
+                @error('password')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
             {{-- Confirm Password --}}
             <div class="mb-8">
                 <label for="password_confirmation">Confirm Password</label>
-                <input type="password" name="password_confirmation" class="input">
+                <div class="@error('password_confirmation') border-2 border-rose-600 @enderror">
+                    <input type="password" name="password_confirmation" class="input">
+                </div>
+                @error('password_confirmation')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
             {{--  --}}
