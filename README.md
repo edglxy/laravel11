@@ -13,3 +13,4 @@
 -   php artisan make:controller AuthController // Create a new controller class
 -   php artisan make:controller DashboardController
 -   php artisan make:model Post -a // Generate a migration, seeder, factory, policy, resource controller, and form request classes for the model
+-   php artisan route:list // This will list the available routes
