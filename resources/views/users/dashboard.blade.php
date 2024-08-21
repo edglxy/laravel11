@@ -5,15 +5,14 @@
     <div class="card mb-4">
         <h2 class="font-bold mb-4">Create a new post</h2>
 
+
         <form action="{{ route('posts.store') }}" method="post">
             @csrf
 
             {{-- Session Messages --}}
             @if (session('success'))
-            <div>
-                <p>
-                    {{ session('success') }}
-                </p>
+            <div class="mb-2">
+                <x-flash-message msg="{{ session('success') }}" bg="bg-yellow-500"></x-flash-message>
             </div>
             @endif
 
