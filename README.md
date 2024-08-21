@@ -14,4 +14,4 @@
 -   php artisan make:controller DashboardController
 -   php artisan make:model Post -a // Generate a migration, seeder, factory, policy, resource controller, and form request classes for the model
 -   php artisan route:list // This will list the available routes
--   php artisan db:seed // This will seed the database with records
+-   php artisan db:seed "Database\Seeders\PostSeeder" // This will seed the database with records
