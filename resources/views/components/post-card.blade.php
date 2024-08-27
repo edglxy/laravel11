@@ -1,4 +1,4 @@
-@props(['post'])
+@props(['post', 'full' => false])
 
 <div class="card">
     {{-- Title --}}
@@ -11,7 +11,14 @@
     </div>
 
     {{-- Body --}}
+    @if ($full)
     <div class="text-sm">
-        <p>{{ Str::words($post->body, 15) }}</p>
+        <span>{{ $post->body }}</span>
     </div>
+    @else
+    <div class="text-sm">
+        <span>{{ Str::words($post->body, 15) }}</span>
+        <a href="{{ route('posts.show', $post) }}" class="text-blue-500 ml-2">Read more &rarr;</a>
+    </div>
+    @endif
 </div>
